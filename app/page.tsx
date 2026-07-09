@@ -1,12 +1,13 @@
 import { Zap, Building2, Gauge, AlertTriangle } from "lucide-react";
-import Sidebar from "@/components/shared/Sidebar";
-import TopBar from "@/components/shared/TopBar";
-import { StatCard, StatusCard } from "@/components/shared/StatCard";
-import EnergyConsumptionChart from "@/components/charts/EnergyConsumptionChart";
-import TotalEnergyChart from "@/components/charts/TotalEnergyChart";
-import MapCard from "@/components/MapCard";
+import Sidebar from "@/components/user/Sidebar";
+import TopBar from "@/components/user/TopBar";
+import { StatCard, StatusCard } from "@/components/user/StatCard";
+import EnergyConsumptionChart from "@/components/user/EnergyConsumptionChart";
+import TotalEnergyChart from "@/components/user/TotalEnergyChart";
+import MapCard from "@/components/user/MapCard";
 import theme from "@/config/theme.js";
 import { statCards } from "@/data/mockData";
+
 
 export default function DashboardPage() {
   return (
@@ -16,14 +17,17 @@ export default function DashboardPage() {
       <main className="flex-1">
         <TopBar />
 
-        <div className="px-[8px] pb-[20px] relative">
-          <h1
-            className="mb-[30px] bg-white px-[6px] py-[10px] rounded-card shadow-card text-center " 
-            style={{ 
-              color: theme.page.heading }}
+        <div className="px-[8px] pb-[20px] relative ">
+          <div
+            className="flex justify-center items-center mb-[30px] bg-white px-[20px] py-[10px] rounded-card shadow-card"
           >
-            Smart energy management system in academic building
-          </h1>
+            <h1
+              className="text-xl font-bold text-center"
+              style={{ color: theme.page.heading }}
+            >
+              Smart energy management system in academic building
+            </h1>
+          </div>
 
           {/* Stat cards */}
           <div className="flex gap-[30px] mb-[30px] flex-wrap"
@@ -61,7 +65,7 @@ export default function DashboardPage() {
           </div>
 
           {/* Charts */}
-          <div className="flex gap-[30px] mb-[30px] flex-col lg:flex-row">
+          <div className="flex gap-[20px] mb-[20px] flex-wrap">
             <EnergyConsumptionChart />
             <TotalEnergyChart />
           </div>
